@@ -4,7 +4,10 @@ WORKDIR /src
 RUN apk --no-cache add git ca-certificates && \
     git clone --depth=1 --branch go_go_gobbonet https://github.com/jmccardle/gobbonet.git . && \
     go mod download && \
-    ./stage-web.sh && \
+    mkdir web && \
+    cp chat.html default-characters.json gobbonet.ico web/ && \
+    cp gobbonet.ico web/favicon.ico && \
+    cp -r js css web/ && \
     VERSION="$(tr -d '[:space:]' < VERSION)-go-$(git rev-parse --short HEAD)" && \
     CGO_ENABLED=0 go build -trimpath \
       -ldflags "-s -w -X github.com/jmccardle/gobbonet/internal/version.Version=$VERSION" \
