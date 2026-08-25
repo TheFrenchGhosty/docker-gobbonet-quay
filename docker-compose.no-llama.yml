@@ -1,0 +1,11 @@
+services:
+  gobbonet:
+    image: quay.io/thefrenchghosty/gobbonet:latest
+    restart: unless-stopped
+    ports:
+      - 127.0.0.1:9066:9066
+    volumes:
+      - ./data:/data
+    environment:
+      # Edit this to point at your own llama.cpp server
+      GOBBONET_LLM_URL: http://host.docker.internal:11437

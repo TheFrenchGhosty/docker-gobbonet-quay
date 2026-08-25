@@ -1,0 +1,25 @@
+services:
+  gobbonet:
+    image: quay.io/thefrenchghosty/gobbonet:latest
+    restart: unless-stopped
+    ports:
+      - 127.0.0.1:9066:9066
+    volumes:
+      - ./data:/data
+    environment:
+      GOBBONET_LLM_URL: http://llama:8080
+    depends_on:
+      llama:
+        condition: service_healthy
+  llama:
+    image: ghcr.io/ggml-org/llama.cpp:server
+    restart: unless-stopped
+    volumes:
+      - ./data:/data
+    environment:
+      # Match the GobboNet location
+      LLAMA_ARG_MODELS_DIR: /data/models
+      # Internal hostname, so that it's accessible externally
+      LLAMA_ARG_HOST: 0.0.0.0
+    healthcheck:
+      test: curl -f http://localhost:8080/health
