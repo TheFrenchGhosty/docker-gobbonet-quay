@@ -2,7 +2,7 @@ FROM docker.io/library/golang:1.25-alpine AS build
 
 WORKDIR /src
 RUN apk --no-cache add git ca-certificates && \
-    git clone --depth=1 --branch go-go-gobbonet https://github.com/jmccardle/gobbonet.git . && \
+    git clone --depth=1 --branch go_go_gobbonet https://github.com/jmccardle/gobbonet.git . && \
     go mod download && \
     ./stage-web.sh && \
     VERSION="$(tr -d '[:space:]' < VERSION)-go-$(git rev-parse --short HEAD)" && \
