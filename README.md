@@ -1,6 +1,6 @@
 # docker-gobbonet-quay
 
-A [GobboNet](https://goblincorps.com/gobbonet) (GitHub: https://github.com/ElodineOfficial/gobbonet ) image, on Quay.
+A [GobboNet](https://goblincorps.com/gobbonet) ([GitHub](https://github.com/ElodineOfficial/gobbonet)) image, on Quay.
 
 [Quay page](https://quay.io/repository/thefrenchghosty/gobbonet)
 
@@ -21,4 +21,4 @@ Models are shared through `./data/models` - both GobboNet and llama.cpp mount th
 
 ## Note
 
-This specifically builds the Linux build from https://github.com/jmccardle/gobbonet - that is officially endorsed by the GobboNet creators - it may or may not get merged with upstream)
+This specifically builds the Linux build from [jmccardle](https://github.com/jmccardle/gobbonet/tree/go_go_gobbonet) - that is officially endorsed by the GobboNet creators - it may or may not get merged with upstream (relevant PR: [here](https://github.com/ElodineOfficial/GobboNet/pull/2)).
