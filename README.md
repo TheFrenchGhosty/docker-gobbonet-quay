@@ -12,7 +12,7 @@ A [GobboNet](https://goblincorps.com/gobbonet) ([GitHub](https://github.com/Elod
   - `docker-compose.rocm.yml`- llama.cpp ROCm server (AMD GPU).
   - `docker-compose.vulkan.yml`- llama.cpp Vulkan server.
   - `docker-compose.no-llama.yml`- GobboNet only, pointing at an external llama.cpp server. Edit `GOBBONET_LLM_URL` in that file to match your server.
-- Create the data directory and make it possible for the containers to write to it with their respecting users: `mkdir -p data && touch data/config.toml && chmod -R 777 data`
+- Create the data directory and make it possible for the containers to write to it with their respecting users: `mkdir -p data/models && touch data/config.toml && chmod -R 777 data`
 - `docker compose up -d` (or `docker compose -f docker-compose.XYZ.yml up -d` for a GPU variant)
 - The UI is available at `http://127.0.0.1:9066`.
 
