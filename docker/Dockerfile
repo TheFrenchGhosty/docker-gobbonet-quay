@@ -1,4 +1,4 @@
-FROM docker.io/library/golang:1.25-alpine AS build
+FROM docker.io/library/golang:1.27-alpine AS build
 
 WORKDIR /src
 RUN apk --no-cache add git ca-certificates && \
