@@ -17,8 +17,3 @@ A [GobboNet](https://goblincorps.com/gobbonet) ([GitHub](https://github.com/Elod
 - The UI is available at `http://127.0.0.1:9066`.
 
 Models are shared through `./data/models` - both GobboNet and llama.cpp mount the same `./data:/data` volume.
-
-
-## Note
-
-This specifically builds the Linux build from [jmccardle](https://github.com/jmccardle/gobbonet/tree/go_go_gobbonet) - that is officially endorsed by the GobboNet creators - it may or may not get merged with upstream (relevant PR: [here](https://github.com/ElodineOfficial/GobboNet/pull/2)).
