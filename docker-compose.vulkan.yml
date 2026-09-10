@@ -1,5 +1,6 @@
 services:
   gobbonet:
+    container_name: gobbonet
     image: quay.io/thefrenchghosty/gobbonet:latest
     restart: unless-stopped
     ports:
@@ -12,6 +13,7 @@ services:
       llama:
         condition: service_healthy
   llama:
+    container_name: llama
     image: ghcr.io/ggml-org/llama.cpp:server-vulkan
     restart: unless-stopped
     volumes:
